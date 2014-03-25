@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='Template'>
 <head>
-  <title>V2</title>
+  <title>Rapid Assessment</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<%= render 'layouts/header_nav' %>
+
+<div id='main' class='container-fluid'>
+  <%= yield %>
+</div>	
 
 </body>
 </html>

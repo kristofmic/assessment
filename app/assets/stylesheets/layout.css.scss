@@ -1,0 +1,71 @@
+/* Colors */
+$white: #ffffff;
+$gray_lighter: lighten(#000, 93.5%);
+$gray_light: lighten(#000, 60%);
+$gray: lighten(#000, 33.5%);
+$gray_dark: lighten(#000, 20%);
+$gray_darker: lighten(#000, 13.5%);
+$black: #333;
+
+/* Header Nav */
+
+.navbar {
+	margin-bottom: 0px;
+
+	.nav.navbar-nav.navbar-right {
+		margin-right: 0;
+	}
+}
+
+/* End Header Nav */
+
+/* Left Nav */
+
+.sidebar {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	top: 51px;
+	padding: 0;
+	background-color: #f3f3f3;
+	border-right: 1px solid #e9e9e9;
+
+	.nav {
+		padding: 20px 0;
+		border-bottom: 1px solid #e9e9e9;
+		
+		li, li.active {
+			border-radius: 0;
+
+			a { 
+				border-radius: 0; 
+
+				.glyphicon {
+					margin-right: 10px;
+					vertical-align: middle;
+					font-size: 18px;
+				}
+			}
+		}
+
+		li.active { border-right: 1px solid $gray_dark; }
+	}
+}
+
+/* End Left Nav */
+
+/* Main */
+body {
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 300;
+	}
+
+	.btn, input, .panel {
+		border-radius: 2px;
+	}
+
+	#main {
+		margin-top: 51px;
+	}
+}
+/* End Main */

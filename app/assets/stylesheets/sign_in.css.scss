@@ -1,0 +1,21 @@
+/* Colors */
+$white: #ffffff;
+$gray_lighter: lighten(#000, 96.5%);
+$gray_light: lighten(#000, 60%);
+$gray: lighten(#000, 33.5%);
+$gray_dark: lighten(#000, 20%);
+$gray_darker: lighten(#000, 13.5%);
+$black: #333;
+
+.panel {
+	background-color: $gray_lighter;
+	box-shadow: 0 4px 6px -3px $gray_light;	
+
+	.panel-body {
+		padding-top: 30px;
+	}
+
+	.btn {
+		width: 100%;
+	}
+}
