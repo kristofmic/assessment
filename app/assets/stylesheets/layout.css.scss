@@ -1,11 +1,5 @@
-/* Colors */
-$white: #ffffff;
-$gray_lighter: lighten(#000, 93.5%);
-$gray_light: lighten(#000, 60%);
-$gray: lighten(#000, 33.5%);
-$gray_dark: lighten(#000, 20%);
-$gray_darker: lighten(#000, 13.5%);
-$black: #333;
+@import 'globals';
+
 
 /* Header Nav */
 
@@ -62,6 +56,11 @@ body {
 
 	.btn, input, .panel {
 		border-radius: 2px;
+	}
+
+	.btn-link, a, button, .btn {
+		outline: 0;
+		&:hover, &:active, &:focus { outline: 0; }
 	}
 
 	#main {

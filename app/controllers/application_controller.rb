@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   include SessionsHelper
+  include ApiHelper
 
   protect_from_forgery
   after_filter :set_csrf_cookie_for_ng

@@ -1,4 +1,4 @@
-var Template = angular.module('Template', ['ui.router'])
+var Template = angular.module('Template', ['ui.router', 'Helper']);
 
 Template.config(['$stateProvider', '$urlRouterProvider', 
 	function($stateProvider, $urlRouterProvider){

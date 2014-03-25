@@ -1,0 +1,29 @@
+@import 'globals';
+
+.flash { 
+	.alert { 
+		border-radius: 2px; 
+		position: absolute;
+		top: 10px;
+		z-index: 1035;
+		-webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+		font-size: 85%;
+		padding: 10px;
+		padding-right: 35px;
+	}
+
+	.alert-success {
+		background-color: rgba(236,208,120, .6);
+		border-color: rgba(212, 187, 108, .8);
+		color: $black;
+		font-weight: bold;
+	}
+
+	.alert-danger {
+		background-color: rgba(236,208,120, .6);
+		border-color: rgba(212, 187, 108, .8);
+		color: $black;
+		font-weight: bold;
+	}
+}
