@@ -14,8 +14,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="right-nav">
       <div class="nav navbar-nav navbar-right">
-        <a class='btn btn-link navbar-btn' href="#/login">Login</a>
-        <a class='btn btn-primary navbar-btn' href='#/signup'>Sign Up</a>
+        <% if signed_in? %>
+          <%= link_to 'Logout', logout_path, method: :delete, class: 'btn btn-link navbar-btn' %>
+        <% else %>
+          <%= link_to 'Login', login_path, class: 'btn btn-link navbar-btn' %>
+          <%= link_to 'Sign Up', signup_path, class: 'btn btn-primary navbar-btn' %>
+        <% end %>
       </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
