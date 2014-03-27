@@ -66,6 +66,12 @@ body {
 		&:hover, &:active, &:focus { outline: 0; }
 	}
 
+	.modal {
+		.modal-header {
+			margin-bottom: 15px;
+		}
+	}
+
 	#main {
 		margin-top: 51px;
 	}

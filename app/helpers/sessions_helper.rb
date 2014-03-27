@@ -35,7 +35,7 @@ module SessionsHelper
 
   def user_not_signed_in
     unless signed_in?
-      redirect_to login_path
+      redirect_to signup_path
     end
   end
 
