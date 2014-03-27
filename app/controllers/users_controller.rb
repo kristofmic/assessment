@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
+  before_filter :user_signed_in
+
   def create
 	  @user = User.new(params[:user])
 	  if @user.save
-	    sign_in @user
-	    redirect_to '/#/main'
+	    sign_in @user, remember_me: params[:remember_me]
+	    redirect_to ng_main_path
 	  else
 	  	render 'new'
 	  end

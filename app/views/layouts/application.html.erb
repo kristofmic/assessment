@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='Template'>
 <head>
-  <title>Rapid Assessment</title>
+  <title>Template</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js" %>
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-cookies.min.js" %>
@@ -12,7 +12,7 @@
 
 <%= render 'layouts/header_nav' %>
 
-<div t-alert alert-message='Here is a message!'></div>
+<!-- <div t-alert alert-message='Here is a message!'></div> -->
 <div id='main' class='container-fluid'>
   <%= yield %>
 </div>	

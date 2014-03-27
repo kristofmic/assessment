@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
     self.email.downcase!
   end
 
+  def sign_out
+    self.save(validate: false)
+  end
+
   private 
     def generate_token(column)  
       begin  
