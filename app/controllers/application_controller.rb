@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   after_filter :set_csrf_cookie_for_ng
 
   def main
+  	user_not_signed_in
 	end
 	
 end
