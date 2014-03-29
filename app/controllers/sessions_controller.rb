@@ -10,12 +10,14 @@ class SessionsController < ApplicationController
       sign_in @user, remember_me: params[:remember_me]
       redirect_to ng_main_path
     else
+      flash.now[:message] = "Incorrect email/password. Please try again."
       render 'new'
     end
   end
 
   def destroy
     sign_out
+    flash.now[:message] = "Successfully signed out."
     render 'new'
   end
 end

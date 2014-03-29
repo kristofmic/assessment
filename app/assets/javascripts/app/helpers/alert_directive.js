@@ -1,22 +1,37 @@
-Helper.directive('tAlert', function() {
-	var templateHTML = "<div class='flash row' style='display: none;'>" +
-          					 "<div class='alert alert-success alert-dismissable col-sm-6 col-xs-8 col-sm-offset-3'" +
-          					 "style='border-radius: 2px; position: absolute; top: 10px; z-index: 1035; box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2); font-size: 85%; padding: 10px; padding-right: 35px;'>" +
-          					 "{{alertMessage}}" + 
-          					 "<button type='button' class='close' onclick=\"$('.flash').slideUp(function(){$(this).remove})\" aria-hidden='true'>&times;</button>" +
-        						 "</div>" + 
-        						 "</div>";
+Helper.directive('chAlert', ['chValidator', function(validator) {
+  var linker = function(scope, element, attrs) {
+    scope.self = element;
+    if (validator.isValid(scope.alertMessage)) {
 
+      if (angular.isArray(scope.alertMessage)) {
+        scope.alertMessage = scope.alertMessage[0];
+      }
+
+      $($(element).children()[0]).show();
+
+      window.setTimeout(function() { 
+        scope.dismiss();
+      }, 6000);
+    } else {
+      scope.dismiss();
+    }
+  };
+
+  var ctrl = function($scope) {
+    $scope.dismiss = function() {
+      $($scope.self.children()[0]).remove();
+      $scope.alertMessage = '';
+    };
+  }
 
 	return {
 		restrict: 'A C',
-		template: templateHTML,
-		scope: {
-			alertMessage: '='
-		},
-		link: function(scope, elem, attrs) {
-			console.log('recognized new custom directive');
-		}
+		templateUrl: '/assets/app/helpers/alert.html',
+		link: linker,
+    controller: ctrl,
+    scope: {
+      alertMessage: '@message'
+    }
 	};
-});
+}]);
 

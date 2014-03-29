@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require underscore
-//= require bootstrap
+//= require bootstrap/modal
+// require bootstrap
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require_directory .
 //= require_tree ./app/.

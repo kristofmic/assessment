@@ -6,8 +6,6 @@ gem 'jquery-rails'
 gem 'uglifier', '>= 1.0.3'
 gem 'sass-rails', '>= 3.2'
 gem 'bootstrap-sass', '~> 3.1.1'
-gem 'underscore-rails'
-
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :development, :test do

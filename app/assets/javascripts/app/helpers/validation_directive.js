@@ -1,10 +1,11 @@
-Helper.directive('chValidate', function(){
+Helper.directive('chValidate', ['chValidator', function(validator){
+
 	var linker = function(scope, elem, attrs) {
 		elem.bind('blur', function() {
-			if (scope.model) {
-				elem.parent().parent().removeClass('has-error');
+			if (validator.isInvalid(scope.model)) {
+				elem.addClass('has-error');
 			} else {
-				elem.parent().parent().addClass('has-error');
+				elem.removeClass('has-error');
 			}
 		});
 	};
@@ -16,4 +17,4 @@ Helper.directive('chValidate', function(){
 			model: '=chValidate'
 		}
 	}
-});
+}]);

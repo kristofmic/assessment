@@ -1,3 +1,3 @@
-Template.factory('User', ['$http', 'Alert', function($http, alert){
+Template.factory('User', ['$http', function($http){
 
 }]);

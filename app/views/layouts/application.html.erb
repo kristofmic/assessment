@@ -12,7 +12,7 @@
 
 <%= render 'layouts/header_nav' %>
 
-<!-- <div t-alert alert-message='Here is a message!'></div> -->
+<div ch-alert message='<%= flash[:message]%> '></div>
 <div id='main' class='container-fluid'>
   <%= yield %>
 </div>	

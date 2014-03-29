@@ -1,3 +1,3 @@
-Template.factory('Session', ['$http', 'Alert', function($http, alert){
+Template.factory('Session', ['$http', function($http){
 	
 }]);
