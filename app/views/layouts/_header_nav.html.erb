@@ -15,6 +15,11 @@
     <div class="collapse navbar-collapse" id="right-nav">
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
+          <li class='active'><%= link_to '/#/profile' do %>
+            <%= content_tag(:span, '', class: "glyphicon glyphicon-user").html_safe %>
+            <%= 'Profile' %>
+          <% end %>
+          </li>
           <li><%= link_to 'Logout', logout_path, method: :delete %></li>
         <% else %>
           <li><%= link_to 'Login', login_path %></li>

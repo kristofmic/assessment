@@ -9,5 +9,10 @@ Template.config(['$stateProvider', '$urlRouterProvider',
         url: '/home',
         templateUrl: '/assets/app/main/main.html',
         controller: 'MainCtrl'
+      })
+      .state('profile', {
+      	url: '/profile', 
+      	templateUrl: '/assets/app/users/profile.html',
+      	controller: 'UserCtrl'
       });
 }]);

@@ -21,7 +21,7 @@ Helper.directive('chAlert', ['$compile', '$templateCache', 'chValidator', functi
     create(scope);
   };
 
-  var ctrlr = function($scope) {
+  var ctrl = function($scope) {
     $(document).on('chRaiseAlert', function(e, message) {
       $scope.alertMessage = message;
       $scope.self.html($templateCache.get('/assets/app/helpers/alert.html')[1]);
@@ -41,7 +41,7 @@ Helper.directive('chAlert', ['$compile', '$templateCache', 'chValidator', functi
 		restrict: 'A C',
 		templateUrl: '/assets/app/helpers/alert.html',
 		link: linker,
-    controller: ctrlr,
+    controller: ctrl,
     scope: {
       alertMessage: '@message'
     }
