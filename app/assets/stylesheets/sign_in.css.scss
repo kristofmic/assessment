@@ -2,6 +2,7 @@
 
 .panel {
 	background-color: $gray_lighter;
+	border: 1px solid lighten(#000, 90%);
 	box-shadow: 0 4px 6px -3px $gray_light;	
 
 	.panel-body {
