@@ -6,7 +6,7 @@ Helper.directive('chAlert', ['$compile', '$templateCache', 'chValidator', functi
         scope.alertMessage = scope.alertMessage[0];
       }
 
-      $($(self).children()[0]).show();
+      $(scope.self.children()[0]).show();
 
       window.setTimeout(function() { 
         scope.dismiss();
