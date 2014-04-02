@@ -4,7 +4,7 @@ V2::Application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy', as: 'logout'
-  post 'forgot_password', to: 'sessions#forgot_password'
+  put 'forgot_password', to: 'sessions#forgot_password'
 
   get 'signup', to: 'users#new', as: 'signup'
   post 'signup', to: 'users#create', as: 'users'

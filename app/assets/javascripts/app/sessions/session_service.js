@@ -1,13 +1,12 @@
-Template.factory('Session', ['$http', 'chAlertSvc', function($http, chAlertSvc){
+Template.factory('Session', ['chApi', 'chAlertSvc', function(chApi, chAlertSvc){
 	
 	var forgotPassword = function(email) {
-		$http.post('/forgot_password', {email: email})
-			.success(function(data, status, headers, config){
-      	chAlertSvc.raise(data.message);
-    	})
-    	.error(function(data, status, headers, config){
-      	chAlertSvc.raise(data.error);
-    	});
+		chApi.update('/forgot_password', {email: email})
+			.then(function(result) {
+				chAlertSvc.raise(result.message);
+			}, function(reason) {
+				chAlertSvc.raise(reason.error);
+			});
 	}
 
 	return {
