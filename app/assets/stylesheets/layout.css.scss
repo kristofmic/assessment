@@ -3,17 +3,6 @@
 
 /* Header Nav */
 
-.navbar {
-	margin-bottom: 0px;
-
-	.nav.navbar-nav.navbar-right {
-		margin-right: 0;
-		a {
-			margin-top: 8px;
-		}
-	}
-}
-
 /* End Header Nav */
 
 /* Left Nav */
@@ -53,12 +42,10 @@
 
 /* Main */
 body {
-	h1, h2, h3, h4, h5, h6 {
-		font-weight: 300;
-	}
+
 
 	.btn, input, .panel {
-		border-radius: 4px;
+		border-radius: 2px;
 	}
 
 	.btn-link, a, button, .btn, .alert {
