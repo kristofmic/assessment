@@ -1,5 +1,5 @@
 Template.controller('SessionCtrl', ['$scope', 'Session', function($scope, Session){
-	$scope.isInvalid = function(model) {
-		console.log(model);
+	$scope.forgotPassword = function(email) {
+		Session.forgotPassword(email);
 	}
 }]);

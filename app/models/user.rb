@@ -2,12 +2,14 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  email           :string(255)
-#  password_digest :string(255)
-#  cookie_token    :string(255)
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                     :integer          not null, primary key
+#  email                  :string(255)
+#  password_digest        :string(255)
+#  cookie_token           :string(255)
+#  password_reset_token   :string(255)
+#  password_reset_sent_dt :datetime
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
 #
 
 class User < ActiveRecord::Base
@@ -27,7 +29,18 @@ class User < ActiveRecord::Base
   end
 
   def sign_out
-    self.save(validate: false)
+    self.save!(validate: false)
+  end
+
+  def generate_password_reset
+    generate_token(:password_reset_token)
+    self.password_reset_sent_dt = Time.zone.now
+    self.save!(validate: false)
+  end
+
+  def clear_password_reset
+    self.password_reset_token = nil
+    self.save!(validate: false)
   end
 
   private 

@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_filter :user_signed_in, except: :destroy
+  before_filter :user_signed_in, only: :new
 
   def new
   end
@@ -19,5 +19,14 @@ class SessionsController < ApplicationController
     sign_out
     flash.now[:message] = "Successfully signed out."
     render 'new'
+  end
+
+  def forgot_password
+    @user = User.find_by_email(params[:email])
+    if @user
+      @user.generate_password_reset
+      UsersMailer.forgot_password(@user).deliver
+    end
+    api_success(message: "An email has been sent to #{params[:email]} with instructions on resetting your password.")
   end
 end

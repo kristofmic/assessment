@@ -11,7 +11,7 @@ Helper.directive('chAlert', ['chValidator', function(validator) {
 
       window.setTimeout(function() { 
         scope.dismiss();
-      }, 6000);
+      }, 7000);
     } else {
       scope.dismiss();
     }
