@@ -1,4 +1,6 @@
 Helper.directive('chAlert', ['$compile', '$templateCache', 'chValidator', function($compile, $templateCache, validator) {
+  var templateUrl = '/assets/helpers/alert/alert.html';
+
   var create = function(scope) {
     if (validator.isValid(scope.alertMessage)) {
 
@@ -22,7 +24,7 @@ Helper.directive('chAlert', ['$compile', '$templateCache', 'chValidator', functi
 
     $(document).on('chRaiseAlert', function(e, message) {
       scope.alertMessage = message;
-      element.html($templateCache.get('/assets/app/helpers/alert.html')[1]);
+      element.html($templateCache.get(templateUrl)[1]);
       $compile(element.contents())(scope);
       create(scope);
     });
@@ -40,7 +42,7 @@ Helper.directive('chAlert', ['$compile', '$templateCache', 'chValidator', functi
 
 	return {
 		restrict: 'A C',
-		templateUrl: '/assets/app/helpers/alert.html',
+		templateUrl: templateUrl,
 		link: linker,
     controller: ctrl,
     scope: {
