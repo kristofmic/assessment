@@ -6,7 +6,7 @@ Template.factory('Session', ['$http', 'chAlertSvc', function($http, chAlertSvc){
       	chAlertSvc.raise(data.message);
     	})
     	.error(function(data, status, headers, config){
-      	alert('There was an error');
+      	chAlertSvc.raise(data.error);
     	});
 	}
 

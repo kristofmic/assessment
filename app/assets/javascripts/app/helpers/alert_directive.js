@@ -19,16 +19,17 @@ Helper.directive('chAlert', ['$compile', '$templateCache', 'chValidator', functi
   var linker = function(scope, element, attrs) {
     scope.self = element;
     create(scope);
+
+    $(document).on('chRaiseAlert', function(e, message) {
+      scope.alertMessage = message;
+      element.html($templateCache.get('/assets/app/helpers/alert.html')[1]);
+      $compile(element.contents())(scope);
+      create(scope);
+    });
   };
 
   var ctrl = function($scope) {
-    $(document).on('chRaiseAlert', function(e, message) {
-      $scope.alertMessage = message;
-      $scope.self.html($templateCache.get('/assets/app/helpers/alert.html')[1]);
-      $compile($scope.self.contents())($scope);
-      create($scope);
-    });
-
+    
     $scope.dismiss = function() {
       _.each($scope.self.children(), function(child) {
         $(child).remove();

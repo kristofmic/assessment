@@ -6,8 +6,8 @@ module ApiHelper
 	end
 
 	def api_error(output)
-		output[:errors] = [output[:errors]] unless output[:errors].is_a? Array
-		response = {status: 'Error', errors: output[:errors]}
+		output[:error] = output[:error][0] if output[:error].is_a? Array
+		response = {status: 'Error', error: output[:error]}
     render json: response, status: 400 
 	end
 end

@@ -22,11 +22,15 @@ class SessionsController < ApplicationController
   end
 
   def forgot_password
-    @user = User.find_by_email(params[:email])
-    if @user
-      @user.generate_password_reset
-      UsersMailer.forgot_password(@user).deliver
+    if params[:email].blank?
+      api_error(error: "Please enter a valid email address") 
+    else
+      @user = User.find_by_email(params[:email])
+      if @user
+        @user.generate_password_reset
+        UsersMailer.forgot_password(@user).deliver
+      end
+      api_success(message: "An email has been sent to #{params[:email]} with instructions on resetting your password.")
     end
-    api_success(message: "An email has been sent to #{params[:email]} with instructions on resetting your password.")
   end
 end
