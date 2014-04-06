@@ -12,19 +12,19 @@
 			    	<div class="form-group">
 					    <%= f.label :email, class: "control-label sr-only" %>
 					    <div class="col-sm-10 col-sm-offset-1">
-					      <%= f.email_field :email, class: 'form-control', placeholder: 'Email address', required: true, 'ng-model' => 'email', 'ch-validate' => 'email' %>
+					      <%= f.email_field :email, class: 'form-control', placeholder: 'Email address', 'ng-required' => true, 'ng-model' => 'email', 'ch-validate' => '{{email}}' %>
 					    </div>
 					  </div>
 					  <div class="form-group">
 					    <%= f.label :password, class: "control-label sr-only" %>
 					    <div class="col-sm-10 col-sm-offset-1">
-					      <%= f.password_field :password, class: 'form-control', placeholder: 'Password', required: true, 'ng-model' => 'password', 'ng-minlength' => 6, 'ch-validate' => 'password' %>
+					      <%= f.password_field :password, class: 'form-control', placeholder: 'Password', 'ng-required' => true, 'ng-model' => 'password', 'ng-minlength' => 6, 'ch-validate' => '{{password}}' %>
 					    </div>
 					  </div>
 					  <div class="form-group">
 					    <%= f.label :password_confirmation, class: "control-label sr-only" %>
 					    <div class="col-sm-10 col-sm-offset-1">
-					      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password confirmation', required: true, 'ng-model' => 'password_confirmation', 'ng-minlength' => '6', 'ch-validate' => 'password_confirmation' %>
+					      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password confirmation', 'ng-required' => true, 'ng-model' => 'password_confirmation', 'ng-minlength' => '6', 'ch-validate' => '{{password_confirmation}}' %>
 					    </div>
 					  </div>
 					  <div class="form-group">
