@@ -1,5 +1,12 @@
 Template.controller('UserCtrl', ['$scope', 'User', function($scope, User){
-  window.getScope = function() {
-    return $scope;
+  $scope.changePassword = function(){
+    User.changePassword({
+      current_password: $scope.currentPassword,
+      new_password: $scope.newPassword,
+      password_confirmation: $scope.passwordConfirmation
+    });
+    $scope.currentPassword = '';
+    $scope.newPassword = '';
+    $scope.passwordConfirmation = '';
   };
 }]);

@@ -12,6 +12,6 @@ V2::Application.routes.draw do
   put 'update_password/:token', to: 'users#update_password', as: 'update_password'
 
   namespace :api do
-    #get 'assessments/requirements', to: 'assessments#requirements'
+    put 'change_password', to: 'users#change_password', as: 'change_password'
   end
 end

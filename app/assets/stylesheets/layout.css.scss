@@ -48,6 +48,11 @@ body {
 		border-radius: 2px;
 	}
 
+	.panel {
+		border: 1px solid #dce4ec;
+		box-shadow: 0 4px 7px -3px $gray_light;	
+	}
+
 	.btn-link, a, button, .btn, .alert {
 		outline: 0;
 		&:hover, &:active, &:focus { outline: 0; }

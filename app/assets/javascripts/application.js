@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap/transition
 //= require bootstrap/modal
 // require bootstrap
 //= require_tree ../../../vendor/assets/javascripts/.
