@@ -1,12 +1,18 @@
+(function(helper) {
 
-  Helper.factory('chValidator', ['$rootScope', '$window', function($rootScope, $window) {
+  helper.factory('chValidator', ['$rootScope', '$window', function($rootScope, $window) {
     if (typeof(String.prototype.trim) != 'function') {
       String.prototype.trim = function() {
         return this.replace(/^\s+|\s+$/g, '');
       };
     }
 
-    var invalidArray = function(arr) {
+    return {
+      isInvalid: isInvalid,
+      isValid: isValid
+    };
+
+    function invalidArray(arr) {
       if (angular.isArray(arr)) {
         if (!arr.length) { return true; }
         for (var i = 0; i < arr.length; i++) {
@@ -16,13 +22,13 @@
         }
       }
       return false;
-    };
+    }
 
-    var invalidString = function(str) {
+    function invalidString(str) {
       return !str.trim().length
-    };
+    }
 
-    var invalidObject = function(obj) {
+    function invalidObject(obj) {
       if (angular.isObject(obj)) {
         if (angular.equals(obj, {})) {
           return true;
@@ -39,24 +45,28 @@
       return false;
     };
 
-    var isInvalid = function(model) {
+    function isInvalid(model) {
       return !model
              || (angular.isObject(model) && (invalidArray(model) || invalidObject(model)))
              || (angular.isString(model) && invalidString(model));
-    };
+    }
 
-    var isValid = function(model) {
-      return !isInvalid(model)
-    };
+    function isValid(model) {
+      return !isInvalid(model);
+    }
+  }]);
+
+  helper.directive('chValidate', ['chValidator', function(validator){
+    var
+      data,
+      linker;
 
     return {
-      isInvalid: isInvalid,
-      isValid: isValid
-    }
-  }])
-  Helper.directive('chValidate', ['chValidator', function(validator){
-    var data;
-    var linker = function(scope, elem, attrs) {
+      restrict: 'AC',
+      link: linker
+    };
+
+    function linker(scope, elem, attrs) {
       if (angular.equals(attrs.ngRequired,'true')) {
         elem.bind('blur', function() {
           data = attrs.chValidate;
@@ -76,9 +86,6 @@
         elem.removeClass('has-error');
       });
     };
-
-    return {
-      restrict: 'AC',
-      link: linker
-    }
   }]);
+
+}(window.ch.helper));

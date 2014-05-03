@@ -1,49 +1,52 @@
-Helper.factory('chApi', ['$http', '$q', function($http, $q) {
+(function(helper) {
 
-	var fetch = function(endpoint, params) {
-		var deferred = $q.defer();
+	helper.factory('chApi', ['$http', '$q', function($http, $q) {
+		return {
+			fetch: fetch,
+			create: create,
+			update: update,
+			destroy: destroy
+		};
 
-		$http.get(endpoint, {params: params})
-			.success(deferred.resolve)
-			.error(deferred.reject);
+		function fetch(endpoint, params) {
+			var deferred = $q.defer();
 
-		return deferred.promise;
-	}
+			$http.get(endpoint, {params: params})
+				.success(deferred.resolve)
+				.error(deferred.reject);
 
-	var create = function(endpoint, params) {
-		var deferred = $q.defer();
+			return deferred.promise;
+		}
 
-		$http.post(endpoint, params)
-			.success(deferred.resolve)
-			.error(deferred.reject);
-			
-		return deferred.promise;
-	}
+		function create(endpoint, params) {
+			var deferred = $q.defer();
 
-	var update = function(endpoint, params) {
-		var deferred = $q.defer();
+			$http.post(endpoint, params)
+				.success(deferred.resolve)
+				.error(deferred.reject);
 
-		$http.put(endpoint, params)
-			.success(deferred.resolve)
-			.error(deferred.reject);
-			
-		return deferred.promise;
-	}
+			return deferred.promise;
+		}
 
-	var destroy = function(endpoint, params) {
-		var deferred = $q.defer();
+		function update(endpoint, params) {
+			var deferred = $q.defer();
 
-		$http.delete(endpoint, {params: params})
-			.success(deferred.resolve)
-			.error(deferred.reject);
-			
-		return deferred.promise;
-	}
+			$http.put(endpoint, params)
+				.success(deferred.resolve)
+				.error(deferred.reject);
 
-	return {
-		fetch: fetch,
-		create: create,
-		update: update,
-		destroy: destroy
-	}
-}]);
+			return deferred.promise;
+		}
+
+		function destroy(endpoint, params) {
+			var deferred = $q.defer();
+
+			$http.delete(endpoint, {params: params})
+				.success(deferred.resolve)
+				.error(deferred.reject);
+
+			return deferred.promise;
+		}
+	}]);
+
+}(window.ch.helper));

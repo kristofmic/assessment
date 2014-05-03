@@ -1,10 +1,14 @@
-Helper.factory('chAlertSvc', [function() {
+(function(helper) {
+  helper.factory('chAlertSvc', [function() {
 
-	var raise = function(message) {
-		$(document).trigger('chRaiseAlert', [message]);
-	};
+    return {
+      raise: raise
+    };
 
-	return {
-		raise: raise
-	}
-}]);
+  	function raise(message) {
+  		$(document).trigger('chRaiseAlert', [message]);
+  	};
+
+  }]);
+
+}(window.ch.helper));

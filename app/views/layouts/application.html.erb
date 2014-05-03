@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html ng-app='Template'>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Template</title>
+  <meta name="description" content="assessment app">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js" %>
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-cookies.min.js" %>
@@ -15,7 +19,7 @@
 <div ch-alert message='<%= flash[:message]%> '></div>
 <div id='main' class='container-fluid'>
   <%= yield %>
-</div>	
+</div>
 
 </body>
 </html>

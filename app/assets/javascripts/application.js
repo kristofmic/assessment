@@ -17,6 +17,8 @@
 // require bootstrap
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require_directory .
+//= require ./helpers/helper_app.js
 //= require_tree ./helpers/.
+//= require ./app/template_app.js
 //= require_tree ./app/.
 

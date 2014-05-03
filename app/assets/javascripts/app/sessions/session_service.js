@@ -1,15 +1,21 @@
-Template.factory('Session', ['chApi', 'chAlertSvc', function(chApi, chAlertSvc){
-	
-	var forgotPassword = function(email) {
-		chApi.update('/forgot_password', {email: email})
-			.then(function(result) {
-				chAlertSvc.raise(result.message);
-			}, function(reason) {
-				chAlertSvc.raise(reason.error);
-			});
-	}
+(function(app) {
 
-	return {
-		forgotPassword: forgotPassword
-	}
-}]);
+	app.factory('Session', ['chApi', 'chAlertSvc', function(chApi, chAlertSvc){
+
+		return {
+			forgotPassword: forgotPassword
+		};
+
+		function forgotPassword(email) {
+			chApi.update('/forgot_password', {email: email})
+				.then(function(result) {
+					chAlertSvc.raise(result.message);
+				}, function(reason) {
+					chAlertSvc.raise(reason.error);
+				});
+		}
+
+
+	}]);
+
+}(window.ch.template));
