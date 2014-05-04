@@ -16,4 +16,4 @@
 
   }]);
 
-}(window.ch.template));
+}(window.ch.assessmentManager));

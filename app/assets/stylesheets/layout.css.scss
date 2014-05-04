@@ -15,12 +15,21 @@ nav.navbar{
 /* Main */
 body {
 	.btn, input, .panel {
-		border-radius: 2px;
+		border-radius: 3px;
 	}
 
 	.panel {
-		border: 1px solid #dce4ec;
+		background-color: $gray_lighter;
+		border: 1px solid $gray_light;
 		box-shadow: 0 4px 7px -3px $gray_light;
+
+		.panel-body {
+			padding-top: 45px;
+		}
+
+		.btn {
+			width: 100%;
+		}
 	}
 
 	.btn-link, a, button, .btn, .alert {

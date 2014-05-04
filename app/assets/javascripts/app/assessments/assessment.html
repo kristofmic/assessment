@@ -1,0 +1,13 @@
+<div class='row'>
+  <div class='col-xs-12'>
+    <ul class="nav nav-tabs">
+      <li  ng-class='{active: nav.active}' ng-repeat='nav in navs track by $index'>
+        <a ui-sref='{{nav.sref}}'>{{nav.label}}</a>
+      </li>
+    </ul>
+  </div>
+
+  <span class='loading ht-loading-icon'><img src='assets/images/486.gif' /></span>
+
+</div>
+<div ui-view></div>
