@@ -1,7 +1,7 @@
 (function(app){
 
   app.controller('AssessmentQuestionnaireCtrl',
-    ['$scope', '$state', 'requirements', 'attributes', 'htEvents', 'AssessmentSvc',
+    ['$scope', '$state', 'requirements', 'attributes', 'chEventManager', 'AssessmentSvc',
     function($scope, $state, requirements, attributes, events, assessment){
 
       $scope.type = $state.current.data.type;

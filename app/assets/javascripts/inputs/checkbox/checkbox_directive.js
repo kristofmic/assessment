@@ -6,20 +6,20 @@
 
     return {
       restrict: 'A',
-      templateUrl: 'assets/javascripts/app/inputs/checkbox.html',
+      templateUrl: 'assets/inputs/checkbox/checkbox.html',
       replace: false,
       controller: control,
       scope: {
-        htCheckboxId: '@',
-        onChange: '&htCheckboxChange',
-        htCheckboxModel: '=',
-        htCheckboxPartial: '='
+        checkboxId: '@chCheckboxId',
+        onChange: '&chCheckboxChange',
+        model: '=chCheckboxModel',
+        partial: '=chCheckboxPartial'
       }
     };
 
     function controllerFunc($scope) {
       $scope.change = function() {
-        $scope.onChange({value: $scope.htCheckboxModel});
+        $scope.onChange({value: $scope.model});
       };
     }
 

@@ -1,6 +1,6 @@
 (function(inputs){
 
-  inputs.directive('htSelectFactory', ['$compile', function($compile){
+  inputs.directive('chSelectFactory', ['$compile', function($compile){
 
     return {
       restrict: 'A',
@@ -9,11 +9,11 @@
       priority: 1000,
       link: linker,
       scope: {
-        htSelectOptions: '=',
-        htSelectOptionLabelProp: '@',
-        htSelectOptionValueProp: '@',
-        htSelected: '=',
-        htOnSelect: '&'
+        options: '=chSelectOptions',
+        labelProp: '@chSelectOptionLabelProp',
+        valueProp: '@chSelectOptionValueProp',
+        selected: '=chSelected',
+        onSelect: '&chOnSelect'
       }
     };
 
@@ -21,22 +21,22 @@
       var template = "<span ";
 
       if (angular.isArray(type)) {
-        template += "ht-multi-select ";
+        template += "ch-multi-select ";
       } else {
-        template += "ht-select ";
+        template += "ch-select ";
       }
 
-      template += "ht-select-options='htSelectOptions' " +
-                  "ht-select-option-label-prop='{{htSelectOptionLabelProp}}' " +
-                  "ht-select-option-value-prop='{{htSelectOptionValueProp}}' " +
-                  "ht-selected='htSelected' " +
-                  "ht-on-select='htOnSelect'></span>";
+      template += "ch-select-options='options' " +
+                  "ch-select-option-label-prop='{{labelProp}}' " +
+                  "ch-select-option-value-prop='{{valueProp}}' " +
+                  "ch-selected='selected' " +
+                  "ch-on-select='onSelect'></span>";
       return template;
     }
 
     function linker(scope, element, attrs) {
       element.html(
-        selectFactory(scope.htSelected)
+        selectFactory(scope.selected)
       );
       $compile(element.contents())(scope);
     }

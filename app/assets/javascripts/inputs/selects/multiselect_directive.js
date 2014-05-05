@@ -1,20 +1,20 @@
 (function(inputs){
 
-  inputs.inputs.directive('htMultiSelect', [function(){
+  inputs.inputs.directive('chMultiSelect', [function(){
     var control = ['$scope', controllerFunc];
 
     return {
       restrict: 'A',
-      templateUrl: 'assets/javascripts/app/inputs/multiselect.html',
+      templateUrl: 'assets/inputs/selects/multiselect.html',
       replace: false,
       link: linker,
       controller: control,
       scope: {
-        options: '=htSelectOptions',
-        label: '@htSelectOptionLabelProp',
-        value: '@htSelectOptionValueProp',
-        onSelect: '&htOnSelect',
-        selected: '=htSelected'
+        options: '=chSelectOptions',
+        label: '@chSelectOptionLabelProp',
+        value: '@chSelectOptionValueProp',
+        onSelect: '&chOnSelect',
+        selected: '=chSelected'
       }
     };
 

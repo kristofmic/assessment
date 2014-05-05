@@ -5,11 +5,11 @@
     var linker = function(scope, elem, attrs) {
         scope.responses = {};
         scope.scopes = {};
-        scope.htSortOrder = ['Domain', 'Control'];
-        scope.htFilter = [];
+        scope.chSortOrder = ['Domain', 'Control'];
+        scope.chFilter = [];
     };
 
-    var control = ['$scope', 'htEvents', 'AssessmentSvc', function($scope, events, assessment) {
+    var control = ['$scope', 'chEventManager', 'AssessmentSvc', function($scope, events, assessment) {
 
         // $scope Functions
         $scope.saveAnswer = function(value, option, req) {
@@ -42,14 +42,14 @@
 
         // Event Handlers
         $scope.$on('toolbarSelect', function(e, args) {
-            _.each($scope.htfRequirements, function(req) {
+            _.each($scope.chfRequirements, function(req) {
                 req.select = args.value;
             });
         });
 
         $scope.$on('toolbarAnswer', function(e, args) {
             events.raise('loadingStart');
-            _.each($scope.htfRequirements, function(req) {
+            _.each($scope.chfRequirements, function(req) {
                 if (req.select) {
                     saveToolbarAnswer(args.value, args.option, req);
                 }
@@ -59,7 +59,7 @@
 
         $scope.$on('toolbarClear', function(e) {
             events.raise('loadingStart');
-            _.each($scope.htfRequirements, function(req) {
+            _.each($scope.chfRequirements, function(req) {
                 if (req.select) {
                     if (!_.isEmpty(req.response)) {
                         $scope.saveAnswer(false, req.response, req);
@@ -82,7 +82,7 @@
         });
 
         $scope.$on('toolbarStarred', function(e, args) {
-            _.each($scope.htfRequirements, function(req) {
+            _.each($scope.chfRequirements, function(req) {
               if (req.select) {
                 req.starred = args.value;
               }
@@ -90,40 +90,40 @@
         });
 
         $scope.$on('toolbarSetFilter', function(e, args) {
-          $scope.htFilter.push(args.filter);
+          $scope.chFilter.push(args.filter);
         });
 
         $scope.$on('toolbarRemoveFilter', function(e, args) {
-          _.remove($scope.htFilter, args.filter);
+          _.remove($scope.chFilter, args.filter);
         });
 
         $scope.$on('toolbarSetSort', function(e, args) {
           var replaceIndex = -1;
           if (args.column[0] === '-') {
-            replaceIndex = _.findIndex($scope.htSortOrder, function(col) {
+            replaceIndex = _.findIndex($scope.chSortOrder, function(col) {
               return col === args.column.split('-')[1];
             });
           }
           else {
-            replaceIndex = _.findIndex($scope.htSortOrder, function(col) {
+            replaceIndex = _.findIndex($scope.chSortOrder, function(col) {
               return col === ('-' + args.column);
             });
           }
 
           if (replaceIndex >= 0) {
-            $scope.htSortOrder.splice(replaceIndex, 1, args.column);
+            $scope.chSortOrder.splice(replaceIndex, 1, args.column);
           }
           else {
-            $scope.htSortOrder.push(args.column);
+            $scope.chSortOrder.push(args.column);
           }
         });
 
         $scope.$on('toolbarRemoveSort', function(e, args) {
           if (args.index) {
-            $scope.htSortOrder.splice(args.index, 1);
+            $scope.chSortOrder.splice(args.index, 1);
           }
           else {
-            _.remove($scope.htSortOrder, function(sort) {
+            _.remove($scope.chSortOrder, function(sort) {
               return sort === args.column;
             });
           }
@@ -133,17 +133,17 @@
 
     return {
       restrict: 'A',
-      templateUrl: 'assets/javascripts/app/assessment/assessment_table/assessment_table.html',
+      templateUrl: 'assets/app/assessments/assessment_table/assessment_table.html',
       replace: false,
       link: linker,
       controller: control,
       scope: {
-        htAssessmentTable: '@',
-        htRequirements: '=',
-        htHeadings: '=',
-        htScopeOptions: '=',
-        htResponseOptions: '=',
-        htSearch: '='
+        chAssessmentTable: '@',
+        chRequirements: '=',
+        chHeadings: '=',
+        chScopeOptions: '=',
+        chResponseOptions: '=',
+        chSearch: '='
       }
     };
   }]);

@@ -1,14 +1,14 @@
 (function(inputs){
 
-  inputs.directive('htStar', [function(){
+  inputs.directive('chStar', [function(){
 
     return {
       restrict: 'A',
-      templateUrl: 'assets/javascripts/app/inputs/star.html',
+      templateUrl: 'assets/inputs/star/star.html',
       replace: false,
       scope: {
-        htStarModel: '=',
-        htStarId: '@'
+        model: '=chStarModel',
+        id: '@chStarId'
       }
     };
 

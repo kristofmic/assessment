@@ -1,6 +1,6 @@
 (function(app) {
 
-  app.filter('htToolbarFilters', [function() {
+  app.filter('chToolbarFilters', [function() {
 
     var filterFunction = function(input, filters) {
       if (!filters || !filters.length) {

@@ -1,20 +1,20 @@
 (function(inputs){
 
-  inputs.directive('htSelect', [function(){
+  inputs.directive('chSelect', [function(){
     var control = ['$scope', controllerFunc];
 
     return {
       restrict: 'A',
-      templateUrl: 'assets/javascripts/app/inputs/select.html',
+      templateUrl: 'assets/inputs/selects/select.html',
       replace: false,
       link: linker,
       controller: control,
       scope: {
-        options: '=htSelectOptions',
-        label: '@htSelectOptionLabelProp',
-        value: '@htSelectOptionValueProp',
-        selected: '=htSelected',
-        onSelect: '&htOnSelect'
+        options: '=chSelectOptions',
+        label: '@chSelectOptionLabelProp',
+        value: '@chSelectOptionValueProp',
+        selected: '=chSelected',
+        onSelect: '&chOnSelect'
       }
     };
 

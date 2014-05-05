@@ -1,8 +1,8 @@
 (function(app){
 
-  app.directive('htToolbar', [function() {
+  app.directive('chToolbar', [function() {
 
-    var control = ['$scope', '$filter', 'htEvents', function($scope, $filter, events) {
+    var control = ['$scope', '$filter', 'chEventManager', function($scope, $filter, events) {
       // Data Setup
       $scope.toolbarOption = '';
       // --Select
@@ -210,7 +210,7 @@
       // --Sort
       $scope.addSort = function(sort, index) {
         if (!_.contains($scope.activeSorts, sort)) {
-          $scope.toolbarOption = 'sorts'
+          $scope.toolbarOption = 'sorts';
           $scope.activeSorts.push(sort);
         }
       };
@@ -253,7 +253,7 @@
         });
 
         var results = $filter('filter')(reqs, $scope.search);
-        results = $filter('htToolbarFilters')(results, filters);
+        results = $filter('chToolbarFilters')(results, filters);
         return results;
       }
 
@@ -274,7 +274,7 @@
       }
 
       function getAnswerFilterOptions(options, type) {
-        var options = _.map(options, function(opt) {
+        options = _.map(options, function(opt) {
           return {
             label: opt.attDesc,
             value: opt.attId,
@@ -351,16 +351,16 @@
     return {
       restrict: 'A',
       replace: false,
-      templateUrl: 'assets/javascripts/app/assessment/assessment_questionnaire/toolbar/toolbar.html',
+      templateUrl: 'assets/app/assessments/assessment_questionnaire/toolbar/toolbar.html',
       controller: control,
       scope: {
-        requirements: '=htRequirements',
-        search: '=htSearch',
-        scopeOptions: '=htScopeOptions',
-        responseOptions: '=htResponseOptions',
-        scopeHeading: '=htScopeHeading',
-        responseHeading: '=htResponseHeading',
-        type: '@htAssessmentType'
+        requirements: '=chRequirements',
+        search: '=chSearch',
+        scopeOptions: '=chScopeOptions',
+        responseOptions: '=chResponseOptions',
+        scopeHeading: '=chScopeHeading',
+        responseHeading: '=chResponseHeading',
+        type: '@chAssessmentType'
       }
     };
 
