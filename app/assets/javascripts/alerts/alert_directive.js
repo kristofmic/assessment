@@ -1,8 +1,7 @@
-(function(helper) {
+(function(alerts) {
 
-  helper.directive('chAlert', ['$compile', '$templateCache', 'chValidator', function($compile, $templateCache, validator) {
-    var
-      templateUrl = '/assets/helpers/alert/alert.html';
+  alerts.directive('chAlert', ['$compile', '$templateCache', 'chValidator', function($compile, $templateCache, validator) {
+    var templateUrl = '/assets/helpers/alert/alert.html';
 
     return {
       restrict: 'AC',
@@ -54,5 +53,5 @@
 
   }]);
 
-}(window.ch.helper));
+}(window.ch.alerts));
 

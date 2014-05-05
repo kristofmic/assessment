@@ -2,6 +2,6 @@
 
   global.ch = global.ch || {};
 
-  global.ch.helper = angular.module('Helper', []);
+  global.ch.validation = angular.module('ch-validation', []);
 
 }(window));

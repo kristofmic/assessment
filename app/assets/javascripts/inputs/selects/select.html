@@ -1,0 +1,15 @@
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style='min-width: 95px;'>
+    <span class='glyphicon {{selectedIcon}}'></span>
+    {{selectedLabel || '-Select-'}}
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li ng-repeat='opt in options'>
+      <span class='select-option' ng-click='select(opt)'>
+        <span class='glyphicon {{opt.icon}}'></span>
+        {{opt[label]}}
+      </span>
+    </li>
+  </ul>
+</div>

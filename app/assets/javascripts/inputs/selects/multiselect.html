@@ -1,0 +1,13 @@
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style='min-width: 95px;'>
+    {{selectedLabel || '-Select-'}} <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li ng-repeat='opt in options track by $index'>
+      <span class='select-option multi-select-option' ng-click='select($event, opt)'>
+        <span class='multi-select-checkbox-container' ht-checkbox ht-checkbox-id='multi-select-{{opt[value]}}-{{$index}}' ht-checkbox-model='selectedValues[opt[value]]'></span>
+        <span class='multi-select-label'>{{opt[label]}}</span>
+      </span>
+    </li>
+  </ul>
+</div>

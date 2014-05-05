@@ -1,0 +1,4 @@
+<label  class='checkbox-label' for='{{htCheckboxId}}'>
+  <span class='glyphicon ng-class:{"glyphicon-ok":htCheckboxModel && !htCheckboxPartial, "glyphicon-minus":htCheckboxPartial}'></span>
+</label>
+<input id='{{htCheckboxId}}' class='ng-hide hidden' ng-change='change()' ng-model='htCheckboxModel' type='checkbox' />

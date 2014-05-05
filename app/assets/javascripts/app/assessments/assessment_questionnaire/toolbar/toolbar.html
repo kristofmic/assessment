@@ -1,0 +1,94 @@
+<div class='row toolbar'>
+
+  <div class='col-xs-3'>
+    <div class="form-group pull-left">
+      <div class="btn-group">
+        <span id='toolbar-select-container' class="btn btn-default ng-class:{'active': toolbarOption === 'select'}" ng-click='setToolbarOption($event, "select")'>
+          <span ht-checkbox ht-checkbox-id='toolbar-select' ht-checkbox-change='selected(value)' ht-checkbox-model='select' ht-checkbox-partial='selectPartial'></span>
+        </span>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Selects</span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><span class='select-option' ng-click='starred(true)'>Starred</span></li>
+          <li><span class='select-option' ng-click='starred(false)'>Unstarred</span></li>
+          <li class="divider"></li>
+          <li><span class='text-danger select-option' ng-click='clearAnswers()'>Clear answers</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-group pull-left">
+      <div class="btn-group">
+        <span id='toolbar-filter-container' class="btn btn-default ng-class:{'active': toolbarOption === 'filter'}" ng-click='setToolbarOption($event, "filter")'>
+          <span class='glyphicon glyphicon-filter ng-class:{enabled: activeFilters.length > 0}'></span>
+        </span>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Filters</span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li ng-repeat='filter in filterOptions track by $index'>
+            <span class='select-option' ng-click='addFilter(filter, $index)'>{{filter.label}}</span>
+          </li>
+          <li class="divider"></li>
+          <li><span class='text-danger select-option' ng-click='clearFilters()'>Clear filters</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-group pull-left">
+      <div class="btn-group">
+        <span id='toolbar-sort-container' class="btn btn-default ng-class:{'active': toolbarOption === 'sorts'}" ng-click='setToolbarOption($event, "sorts")'>
+          <span class='glyphicon glyphicon-sort ng-class:{enabled: activeSorts.length > 0}'></span>
+        </span>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Sorting</span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li ng-repeat='sort in sortOptions track by $index'>
+            <span class='select-option' ng-click='addSort(sort, $index)'>{{sort.label}}</span>
+          </li>
+          <li class="divider"></li>
+          <li><span class='text-danger select-option' ng-click='clearSorts()'>Clear sort</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class='col-xs-6'>
+    <div ng-switch='toolbarOption'>
+      <form class="form-inline" role="form" ng-switch-when='select'>
+        <div class='form-group select-option-container'>
+          <span ht-select-factory ht-select-options='responseOptions' ht-select-option-label-prop='attDesc' ht-select-option-value-prop='attId' ht-selected='answers.response' ht-on-select='setAnswers(value, option)'></span>
+        </div>
+        <div class='form-group select-option-container'>
+          <span ht-select-factory ht-select-options='scopeOptions' ht-select-option-label-prop='attDesc' ht-select-option-value-prop='attId' ht-selected='answers.scope' ht-on-select='setAnswers(value, option)'></span>
+        </div>
+      </form>
+
+      <form class="form-inline" role="form" ng-switch-when='filter'>
+        <div class='form-group filter-option-container' ng-repeat='aFilter in activeFilters track by $index'>
+          <button type="button" class="close" aria-hidden="true" ng-click='removeFilter(aFilter, $index)'>&times;</button>
+          <span ht-select-factory ht-select-options='aFilter.options' ht-select-option-label-prop='label' ht-select-option-value-prop='value' ht-selected='aFilter.active' ht-on-select='setFilter(value, option, aFilter)'></span>
+        </div>
+      </form>
+
+      <form class="form-inline" role="form" ng-switch-when='sorts'>
+        <div class='form-group sort-option-container' ng-repeat='sort in activeSorts track by $index'>
+          <button type="button" class="close" aria-hidden="true" ng-click='removeSort(sort, $index)'>&times;</button>
+          <span ht-select-factory ht-select-options='sort.options' ht-select-option-label-prop='label' ht-select-option-value-prop='value' ht-selected='sort.active' ht-on-select='setSort(value, option, sort)'></span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class='col-xs-3'>
+    <div class="form-group search-container">
+      <input type="text" class="form-control" placeholder="Search" ng-model='search'>
+    </div>
+  </div>
+
+</div>

@@ -2,7 +2,17 @@
 
   global.ch = global.ch || {};
 
-  ch.assessmentManager = angular.module('AssessmentManager', ['ui.router', 'Helper']);
+  ch.assessmentManager = angular.module('AssessmentManager',
+    [
+      'ui.router',
+      'ch-ajax',
+      'ch-alerts',
+      'ch-events',
+      'ch-inputs',
+      'ch-loading',
+      'ch-validation'
+    ]
+  );
 
   ch.assessmentManager.config(['$stateProvider', '$urlRouterProvider',
   function($stateProvider, $urlRouterProvider){

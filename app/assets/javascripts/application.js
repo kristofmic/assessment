@@ -17,8 +17,18 @@
 // require bootstrap
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require_directory .
-//= require ./helpers/helper_app.js
-//= require_tree ./helpers/.
-//= require ./app/template_app.js
+//= require ./ajax/ajax_app.js
+//= require_tree ./ajax/.
+//= require ./alerts/alerts_app.js
+//= require_tree ./alerts/.
+//= require ./events/events_app.js
+//= require_tree ./events/.
+//= require ./inputs/inputs_app.js
+//= require_tree ./inputs/.
+//= require ./loading/loading_app.js
+//= require_tree ./loading/.
+//= require ./validator/validator_app.js
+//= require_tree ./validator/.
+//= require ./app/assessment_app.js
 //= require_tree ./app/.
 
