@@ -1,6 +1,6 @@
 (function(inputs){
 
-  inputs.inputs.directive('chMultiSelect', [function(){
+  inputs.directive('chMultiSelect', [function(){
     var control = ['$scope', controllerFunc];
 
     return {

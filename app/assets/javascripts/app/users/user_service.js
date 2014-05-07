@@ -1,12 +1,12 @@
 (function(app) {
 
-  app.factory('User', ['chApi', 'chAlertSvc', function(chApi, chAlertSvc){
+  app.factory('User', ['chAjax', 'chAlertSvc', function(chAjax, chAlertSvc){
     return {
       changePassword: changePassword
     };
 
     function changePassword(data) {
-      chApi.update('api/change_password', data)
+      chAjax.update('api/change_password', data)
       .then(function(result) {
         chAlertSvc.raise(result.message);
       }, function(reason) {

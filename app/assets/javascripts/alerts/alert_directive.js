@@ -15,15 +15,20 @@
     };
 
     function create(scope) {
-      if (angular.isArray(scope.alertMessage)) {
-        scope.alertMessage = scope.alertMessage[0];
+      if (scope.alertMessage) {
+        if (angular.isArray(scope.alertMessage)) {
+          scope.alertMessage = scope.alertMessage[0];
+        }
+
+        $(scope.el.children()[0]).show();
+
+        window.setTimeout(function() {
+          scope.dismiss();
+        }, 6000);
       }
-
-      $(scope.el.children()[0]).show();
-
-      window.setTimeout(function() {
+      else {
         scope.dismiss();
-      }, 6000);
+      }
     }
 
     function linker(scope, element, attrs) {

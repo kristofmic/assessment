@@ -30,4 +30,4 @@
     }
   }]);
 
-}(global.ch.validation));
+}(window.ch.validation));
