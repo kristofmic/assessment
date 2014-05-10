@@ -13,5 +13,9 @@ V2::Application.routes.draw do
 
   namespace :api do
     put 'change_password', to: 'users#change_password', as: 'change_password'
+
+    get 'requirements', to: 'requirements#fetch'
+
+    get 'attributes', to: 'attributes#fetch'
   end
 end

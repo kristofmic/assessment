@@ -16,7 +16,7 @@
 
   ch.assessmentManager.config(['$stateProvider', '$urlRouterProvider',
   function($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise("/assessment/policy");
+    $urlRouterProvider.otherwise("/profile");
 
     $stateProvider
       .state('profile', {
@@ -26,13 +26,13 @@
       })
       .state('assessment', {
         url: '/assessment',
-        templateUrl: 'assets/javascripts/app/assessment/assessment.html',
+        templateUrl: 'assets/app/assessments/assessment.html',
         controller: 'AssessmentCtrl',
         abstract: true
       })
       .state('assessment.policy', {
         url: '/policy',
-        templateUrl: 'assets/javascripts/app/assessment/assessment_questionnaire/assessment_questionnaire.html',
+        templateUrl: 'assets/app/assessments/assessment_questionnaire/assessment_questionnaire.html',
         controller: 'AssessmentQuestionnaireCtrl',
         data: {
           nav: 0,
@@ -53,7 +53,7 @@
       })
       .state('assessment.procedure', {
         url: '/procedure',
-        templateUrl: 'assets/javascripts/app/assessment/assessment_questionnaire/assessment_questionnaire.html',
+        templateUrl: 'assets/app/assessments/assessment_questionnaire/assessment_questionnaire.html',
         controller: 'AssessmentQuestionnaireCtrl',
         data: {
           nav: 1,
@@ -74,7 +74,7 @@
       })
       .state('assessment.implemented', {
         url: '/implemented',
-        templateUrl: 'assets/javascripts/app/assessment/assessment_questionnaire/assessment_questionnaire.html',
+        templateUrl: 'assets/app/assessments/assessment_questionnaire/assessment_questionnaire.html',
         controller: 'AssessmentQuestionnaireCtrl',
         data: {
           nav: 2,
@@ -95,7 +95,7 @@
       })
       .state('assessment.measured', {
         url: '/measured',
-        templateUrl: 'assets/javascripts/app/assessment/assessment_questionnaire/assessment_questionnaire.html',
+        templateUrl: 'assets/app/assessments/assessment_questionnaire/assessment_questionnaire.html',
         controller: 'AssessmentQuestionnaireCtrl',
         data: {
           nav: 3,
@@ -116,7 +116,7 @@
       })
       .state('assessment.managed', {
         url: '/managed',
-        templateUrl: 'assets/javascripts/app/assessment/assessment_questionnaire/assessment_questionnaire.html',
+        templateUrl: 'assets/app/assessments/assessment_questionnaire/assessment_questionnaire.html',
         controller: 'AssessmentQuestionnaireCtrl',
         data: {
           nav: 4,

@@ -11,7 +11,7 @@
   <tbody>
     <tr ng-repeat='req in chfRequirements = (chRequirements | orderBy:chSortOrder | filter:chSearch | chToolbarFilters:chFilter) track by $index' ng-class="{warning:req.select}">
       <td width='2.5%'>
-        <span ch-checkbox ch-checkbox-id='req-select-{{$index}}' ch-checkbox-change='setSelected(value, req)' ch-checkbox-model='req.select'></span>
+        <span ch-checkbox ch-checkbox-id='req-select-{{$index}}' ch-checkbox-change='setSelected(value, req)' ch-checkbox-model='req.select' class='ch-checkbox-container'></span>
       </td>
       <td width='2.5%'>
         <span ch-star ch-star-id='req-star-{{$index}}' ch-star-model='req.starred'></span>
