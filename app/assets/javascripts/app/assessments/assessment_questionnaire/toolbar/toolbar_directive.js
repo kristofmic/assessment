@@ -81,32 +81,32 @@
         {
           label: 'Domain',
           options: {
-            asc: { label: 'Domain', icon: 'glyphicon-sort-by-attributes', value: 0, sort: 'Domain' },
-            desc: { label: 'Domain', icon: 'glyphicon-sort-by-attributes-alt', value: 1, sort: '-Domain' }
+            asc: { label: 'Domain', icon: 'glyphicon-sort-by-alphabet', value: 0, sort: 'Domain' },
+            desc: { label: 'Domain', icon: 'glyphicon-sort-by-alphabet-alt', value: 1, sort: '-Domain' }
           },
           active: {}
         },
         {
           label: 'Control',
           options: {
-            asc: { label: 'Control', icon: 'glyphicon-sort-by-attributes', value: 0, sort: 'Control' },
-            desc: { label: 'Control', icon: 'glyphicon-sort-by-attributes-alt', value: 1, sort: '-Control' }
+            asc: { label: 'Control', icon: 'glyphicon-sort-by-alphabet', value: 0, sort: 'Control' },
+            desc: { label: 'Control', icon: 'glyphicon-sort-by-alphabet-alt', value: 1, sort: '-Control' }
           },
           active: {}
         },
         {
           label: $scope.responseHeading,
           options: {
-            asc: { label: $scope.responseHeading + '', icon: 'glyphicon-sort-by-attributes-alt', value: 0, sort: 'response.attId' },
-            desc: { label: $scope.responseHeading + '', icon: 'glyphicon-sort-by-attributes', value: 1, sort: '-response.attId' }
+            asc: { label: $scope.responseHeading + '', icon: 'glyphicon-sort-by-order-alt', value: 0, sort: 'response.attId' },
+            desc: { label: $scope.responseHeading + '', icon: 'glyphicon-sort-by-order', value: 1, sort: '-response.attId' }
           },
           active: {}
         },
         {
           label: $scope.scopeHeading,
           options: {
-            asc: { label: $scope.scopeHeading + '', icon: 'glyphicon-sort-by-attributes-alt', value: 0, sort: ('scope.' + getScopeSort($scope.type)) },
-            desc: { label: $scope.scopeHeading + '', icon: 'glyphicon-sort-by-attributes', value: 1, sort: '-scope.' + getScopeSort($scope.type) }
+            asc: { label: $scope.scopeHeading + '', icon: 'glyphicon-sort-by-order-alt', value: 0, sort: ('scope.' + getScopeSort($scope.type)) },
+            desc: { label: $scope.scopeHeading + '', icon: 'glyphicon-sort-by-order', value: 1, sort: '-scope.' + getScopeSort($scope.type) }
           },
           active: {}
         }

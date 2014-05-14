@@ -62,24 +62,24 @@
     <div ng-switch='toolbarOption'>
       <form class="form-inline" role="form" ng-switch-when='select'>
         <div class='form-group select-option-container'>
-          <span ht-select-factory ht-select-options='responseOptions' ht-select-option-label-prop='attDesc' ht-select-option-value-prop='attId' ht-selected='answers.response' ht-on-select='setAnswers(value, option)'></span>
+          <span ch-select-factory ch-select-options='responseOptions' ch-select-option-label-prop='attDesc' ch-select-option-value-prop='attId' ch-selected='answers.response' ch-on-select='setAnswers(value, option)'></span>
         </div>
         <div class='form-group select-option-container'>
-          <span ht-select-factory ht-select-options='scopeOptions' ht-select-option-label-prop='attDesc' ht-select-option-value-prop='attId' ht-selected='answers.scope' ht-on-select='setAnswers(value, option)'></span>
+          <span ch-select-factory ch-select-options='scopeOptions' ch-select-option-label-prop='attDesc' ch-select-option-value-prop='attId' ch-selected='answers.scope' ch-on-select='setAnswers(value, option)'></span>
         </div>
       </form>
 
       <form class="form-inline" role="form" ng-switch-when='filter'>
         <div class='form-group filter-option-container' ng-repeat='aFilter in activeFilters track by $index'>
           <button type="button" class="close" aria-hidden="true" ng-click='removeFilter(aFilter, $index)'>&times;</button>
-          <span ht-select-factory ht-select-options='aFilter.options' ht-select-option-label-prop='label' ht-select-option-value-prop='value' ht-selected='aFilter.active' ht-on-select='setFilter(value, option, aFilter)'></span>
+          <span ch-select-factory ch-select-options='aFilter.options' ch-select-option-label-prop='label' ch-select-option-value-prop='value' ch-selected='aFilter.active' ch-on-select='setFilter(value, option, aFilter)'></span>
         </div>
       </form>
 
       <form class="form-inline" role="form" ng-switch-when='sorts'>
         <div class='form-group sort-option-container' ng-repeat='sort in activeSorts track by $index'>
           <button type="button" class="close" aria-hidden="true" ng-click='removeSort(sort, $index)'>&times;</button>
-          <span ht-select-factory ht-select-options='sort.options' ht-select-option-label-prop='label' ht-select-option-value-prop='value' ht-selected='sort.active' ht-on-select='setSort(value, option, sort)'></span>
+          <span ch-select-factory ch-select-options='sort.options' ch-select-option-label-prop='label' ch-select-option-value-prop='value' ch-selected='sort.active' ch-on-select='setSort(value, option, sort)'></span>
         </div>
       </form>
     </div>

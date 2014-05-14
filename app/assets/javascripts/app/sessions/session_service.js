@@ -1,13 +1,13 @@
 (function(app) {
 
-	app.factory('Session', ['chApi', 'chAlertSvc', function(chApi, chAlertSvc){
+	app.factory('Session', ['chAjax', 'chAlertSvc', function(ajax, chAlertSvc){
 
 		return {
 			forgotPassword: forgotPassword
 		};
 
 		function forgotPassword(email) {
-			chApi.update('/forgot_password', {email: email})
+			ajax.update('/forgot_password', {email: email})
 				.then(function(result) {
 					chAlertSvc.raise(result.message);
 				}, function(reason) {
