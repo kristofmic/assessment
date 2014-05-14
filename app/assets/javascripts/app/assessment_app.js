@@ -24,6 +24,11 @@
         templateUrl: '/assets/app/users/profile.html',
         controller: 'UserCtrl'
       })
+      .state('dashboard', {
+        url: '/dashboard',
+        templateUrl: 'assets/app/dashboard/dashboard.html',
+        controller: 'DashboardCtrl'
+      })
       .state('assessment', {
         url: '/assessment',
         templateUrl: 'assets/app/assessments/assessment.html',

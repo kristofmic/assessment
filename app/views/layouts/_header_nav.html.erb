@@ -8,16 +8,26 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#/assessment/policy">Assessment</a>
+      <a class="navbar-brand" href="#/assessment/policy">Assessment Manager</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="right-nav">
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
+          <li><%= link_to '/#/dashboard' do %>
+            <%= content_tag(:span, '', class: "glyphicon glyphicon-dashboard").html_safe %>
+            <%= 'Dashboard' %>
+          <% end %>
+          </li>
+          <li><%= link_to '/#/assessment/policy' do %>
+            <%= content_tag(:span, '', class: "glyphicon glyphicon-list").html_safe %>
+            <%= 'Assessment' %>
+          <% end %>
+          </li>
           <li><%= link_to '/#/profile' do %>
             <%= content_tag(:span, '', class: "glyphicon glyphicon-user").html_safe %>
-            <%= 'Account' %>
+            <%= 'Profile' %>
           <% end %>
           </li>
           <li><%= link_to logout_path, method: :delete do %>
