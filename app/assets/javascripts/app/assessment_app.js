@@ -28,7 +28,27 @@
       .state('dashboard', {
         url: '/dashboard',
         templateUrl: 'assets/app/dashboard/dashboard.html',
-        controller: 'DashboardCtrl'
+        controller: 'DashboardCtrl',
+        resolve: {
+          requirements: ['AssessmentSvc', '$q', function(assessment, $q) {
+            return $q.all({
+              policy: assessment.getRequirements('Policy'),
+              procedure: assessment.getRequirements('Procedure'),
+              implemented: assessment.getRequirements('Implemented'),
+              measured: assessment.getRequirements('Measured'),
+              managed: assessment.getRequirements('Managed')
+            });
+          }],
+          attributes: ['AssessmentSvc', '$q', function(assessment, $q) {
+            return $q.all({
+              policy: assessment.getAttributes('Policy'),
+              procedure: assessment.getAttributes('Procedure'),
+              implemented: assessment.getAttributes('Implemented'),
+              measured: assessment.getAttributes('Measured'),
+              managed: assessment.getAttributes('Managed')
+            });
+          }]
+        }
       })
       .state('assessment', {
         url: '/assessment',
