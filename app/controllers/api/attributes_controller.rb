@@ -1,7 +1,15 @@
 class Api::AttributesController < ApiController
 
   def fetch
-    api_success data: attributes
+    api_success(data: attributes)
+  end
+
+  def update
+    api_success(message: 'Success')
+  end
+
+  def delete
+    api_success(message: 'Success')
   end
 
   private

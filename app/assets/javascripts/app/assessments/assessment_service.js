@@ -82,7 +82,7 @@
     function saveFinding(fID, attrId, attrTypeId, value) {
       if (value) {
         console.log('Saving: objectId-' + getObjectID() + ' fID-' + fID + ' attrId-' + attrId + ' attrTypeId-' + attrTypeId + ' value-' + value);
-        ajax.update('ajax/updateFindings.php', {
+        ajax.update('api/attributes', {
           objectID: getObjectID(),
           fID: fID,
           attId: attrId,
@@ -92,7 +92,7 @@
       }
       else {
         console.log('Deleting: objectId-' + getObjectID() + ' fID-' + fID + ' attrId-' + attrId + ' attrTypeId-' + attrTypeId + ' value-' + value);
-        ajax.destroy('ajax/updateFindings.php', {
+        ajax.destroy('api/attributes', {
           objectID: getObjectID(),
           fID: fID,
           attId: attrId,

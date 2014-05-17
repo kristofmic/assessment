@@ -17,5 +17,7 @@ V2::Application.routes.draw do
     get 'requirements', to: 'requirements#fetch'
 
     get 'attributes', to: 'attributes#fetch'
+    put 'attributes', to: 'attributes#update'
+    delete 'attributes', to: 'attributes#delete'
   end
 end
