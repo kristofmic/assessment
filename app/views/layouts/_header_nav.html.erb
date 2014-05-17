@@ -15,17 +15,17 @@
     <div class="collapse navbar-collapse" id="right-nav">
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
-          <li><%= link_to '/#/dashboard' do %>
+          <li ch-nav='dashboard'><%= link_to '/#/dashboard' do %>
             <%= content_tag(:span, '', class: "glyphicon glyphicon-dashboard").html_safe %>
             <%= 'Dashboard' %>
           <% end %>
           </li>
-          <li><%= link_to '/#/assessment/policy' do %>
+          <li ch-nav='assessment'><%= link_to '/#/assessment/policy' do %>
             <%= content_tag(:span, '', class: "glyphicon glyphicon-list").html_safe %>
             <%= 'Assessment' %>
           <% end %>
           </li>
-          <li><%= link_to '/#/profile' do %>
+          <li ch-nav='profile'><%= link_to '/#/profile' do %>
             <%= content_tag(:span, '', class: "glyphicon glyphicon-user").html_safe %>
             <%= 'Profile' %>
           <% end %>

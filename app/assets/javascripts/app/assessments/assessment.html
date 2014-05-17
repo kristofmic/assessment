@@ -1,8 +1,20 @@
 <div class='row'>
   <div class='col-xs-12'>
     <ul class="nav nav-tabs">
-      <li  ng-class='{active: nav.active}' ng-repeat='nav in navs track by $index'>
-        <a ui-sref='{{nav.sref}}'>{{nav.label}}</a>
+      <li ch-nav='assessment/policy'>
+        <a ui-sref='assessment.policy'>Policy</a>
+      </li>
+      <li ch-nav='assessment/procedure'>
+        <a ui-sref='assessment.procedure'>Procedure</a>
+      </li>
+      <li ch-nav='assessment/implemented'>
+        <a ui-sref='assessment.implemented'>Implemented</a>
+      </li>
+      <li ch-nav='assessment/measured'>
+        <a ui-sref='assessment.measured'>Measured</a>
+      </li>
+      <li ch-nav='assessment/managed'>
+        <a ui-sref='assessment.managed'>Managed</a>
       </li>
     </ul>
   </div>

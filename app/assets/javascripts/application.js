@@ -27,6 +27,8 @@
 //= require_tree ./loading/.
 //= require ./validator/validator_app.js
 //= require_tree ./validator/.
+//= require ./navigation/navigation_app.js
+//= require_tree ./navigation/.
 //= require ./app/assessment_app.js
 //= require_tree ./app/.
 

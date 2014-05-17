@@ -15,7 +15,6 @@
       $scope.scopeOptions = _.filter(attributes, function(attr) { return attr.answerType === 'scope'; });
       $scope.responseOptions = _.filter(attributes, function(attr) { return attr.answerType === 'response'; });
 
-      $scope.setNav($state.current.data.nav);
       events.raise('resetToolbar');
 
     }

@@ -15,11 +15,6 @@
   margin-right: 15px;
 }
 
-.btn-group button.btn .glyphicon, .dropdown-menu li span.select-option .glyphicon {
-  font-size: 12px;
-  margin-right: 3px;
-}
-
 .dropdown-menu {
   max-height: 250px;
   overflow-y: scroll;
@@ -47,12 +42,17 @@
 
       .multi-select-checkbox-container {
         position: relative;
+        display: block;
 
         .checkbox-label {
           position: absolute;
-          top: 0;
+          top: 2px;
           left: 0;
           margin: 0;
+
+          span.glyphicon {
+            top: -1px;
+          }
         }
       }
 

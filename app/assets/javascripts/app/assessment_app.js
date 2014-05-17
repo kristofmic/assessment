@@ -10,13 +10,14 @@
       'ch-events',
       'ch-inputs',
       'ch-loading',
-      'ch-validation'
+      'ch-validation',
+      'ch-navigation'
     ]
   );
 
   ch.assessmentManager.config(['$stateProvider', '$urlRouterProvider',
   function($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise("/profile");
+    $urlRouterProvider.otherwise("/dashboard");
 
     $stateProvider
       .state('profile', {
@@ -40,7 +41,6 @@
         templateUrl: 'assets/app/assessments/assessment_questionnaire/assessment_questionnaire.html',
         controller: 'AssessmentQuestionnaireCtrl',
         data: {
-          nav: 0,
           type: 'Policy',
           headings: {
             response: 'Documented',
@@ -61,7 +61,6 @@
         templateUrl: 'assets/app/assessments/assessment_questionnaire/assessment_questionnaire.html',
         controller: 'AssessmentQuestionnaireCtrl',
         data: {
-          nav: 1,
           type: 'Procedure',
           headings: {
             response: 'Documented',
@@ -82,7 +81,6 @@
         templateUrl: 'assets/app/assessments/assessment_questionnaire/assessment_questionnaire.html',
         controller: 'AssessmentQuestionnaireCtrl',
         data: {
-          nav: 2,
           type: 'Implemented',
           headings: {
             response: 'Implemented',
@@ -103,7 +101,6 @@
         templateUrl: 'assets/app/assessments/assessment_questionnaire/assessment_questionnaire.html',
         controller: 'AssessmentQuestionnaireCtrl',
         data: {
-          nav: 3,
           type: 'Measured',
           headings: {
             response: 'Review',
@@ -124,7 +121,6 @@
         templateUrl: 'assets/app/assessments/assessment_questionnaire/assessment_questionnaire.html',
         controller: 'AssessmentQuestionnaireCtrl',
         data: {
-          nav: 4,
           type: 'Managed',
           headings: {
             response: 'Corrective Actions',
