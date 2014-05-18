@@ -8,7 +8,7 @@ class Api::AttributesController < ApiController
     api_success(message: 'Success')
   end
 
-  def delete
+  def destroy
     api_success(message: 'Success')
   end
 

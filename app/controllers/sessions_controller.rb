@@ -17,13 +17,13 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
-    flash.now[:message] = "Successfully signed out."
-    render 'new'
+    flash[:message] = "Successfully signed out."
+    redirect_to login_path
   end
 
   def forgot_password
     if params[:email].blank?
-      api_error(error: "Please enter a valid email address") 
+      api_error(error: "Please enter a valid email address")
     else
       @user = User.find_by_email(params[:email])
       if @user

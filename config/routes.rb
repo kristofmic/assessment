@@ -18,6 +18,6 @@ V2::Application.routes.draw do
 
     get 'attributes', to: 'attributes#fetch'
     put 'attributes', to: 'attributes#update'
-    delete 'attributes', to: 'attributes#delete'
+    delete 'attributes', to: 'attributes#destroy'
   end
 end

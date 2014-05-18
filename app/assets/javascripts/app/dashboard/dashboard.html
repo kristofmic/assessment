@@ -1,26 +1,32 @@
-<div class='row'>
-  <div class='col-xs-12'>
-    <h3 class='page-header'>Assessment Dashboard</h3>
-  </div>
-</div>
 
-<div class='row'>
+<div class='row' ng-repeat='section in sections | orderBy:"order"'>
   <div class='col-xs-12'>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Section</th>
-          <th>Controls</th>
-          <th>Requirements</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat='section in sections | orderBy:"order"'>
-          <td>{{section.label}}</td>
-          <td>{{section.controls.count}}</td>
-          <td>{{section.requirements.count}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <h2><small>{{section.label}}</small></h2>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <table class='table'>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Answered</th>
+                <th>Unanswered</th>
+                <th>Partially Answered</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Requirements</strong></td>
+                <td>{{section.requirements.answers.answered}}</td>
+                <td>{{section.requirements.answers.unanswered}}</td>
+                <td>{{section.requirements.answers.partiallyAnswered}}</td>
+                <td>{{section.requirements.total}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
   </div>
 </div>
