@@ -13,10 +13,8 @@
 
   app.controller('DashboardCtrl', dependencies);
 
-  function DashboardCtrl($scope, requirements, attributes, dashboard) {
-
+  function DashboardCtrl($scope, requirements, attributes, dashboard, charts) {
     $scope.sections = dashboard.getSections(requirements);
-
   }
 
 }(window.ch.assessmentManager));

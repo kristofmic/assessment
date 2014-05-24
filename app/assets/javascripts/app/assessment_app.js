@@ -9,6 +9,7 @@
       'ch-alerts',
       'ch-events',
       'ch-inputs',
+      'ch-charts',
       'ch-loading',
       'ch-validation',
       'ch-navigation'

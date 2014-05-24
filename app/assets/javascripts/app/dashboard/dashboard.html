@@ -3,28 +3,8 @@
   <div class='col-xs-12'>
     <h2><small>{{section.label}}</small></h2>
       <div class="panel panel-default">
-        <div class="panel-body">
-          <table class='table'>
-            <thead>
-              <tr>
-                <th></th>
-                <th>Answered</th>
-                <th>Unanswered</th>
-                <th>Partially Answered</th>
-                <th>Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Requirements</strong></td>
-                <td>{{section.requirements.answers.answered}}</td>
-                <td>{{section.requirements.answers.unanswered}}</td>
-                <td>{{section.requirements.answers.partiallyAnswered}}</td>
-                <td>{{section.requirements.total}}</td>
-              </tr>
-            </tbody>
-          </table>
-
+        <div id='{{section.label}}' class="panel-body">
+          <div ch-pie ch-data-set='section.requirements.answers'></div>
         </div>
       </div>
     </div>

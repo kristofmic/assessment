@@ -19,6 +19,8 @@
 //= require_tree ./ajax/.
 //= require ./alerts/alerts_app.js
 //= require_tree ./alerts/.
+//= require ./charts/charts_app.js
+//= require_tree ./charts/.
 //= require ./events/events_app.js
 //= require_tree ./events/.
 //= require ./inputs/inputs_app.js
